@@ -26,7 +26,12 @@ def predict_api():
         
         prediction = risk_level_prediction(features)
         
-        return jsonify({"prediction": prediction})
+        return jsonify({
+            "prediction": prediction,
+            "disclaimer": "This prediction is based on a machine learning model and is not 100% accurate. Always consult with a healthcare professional for medical advice."
+         })
+
+    
     except KeyError as e:
         return jsonify({"error": f"Missing required field: {str(e)}"}), 400
     except ValueError as e:
@@ -44,6 +49,7 @@ def risk_level_prediction(input_data):
     # Making prediction
     prediction = model.predict(input_data_reshape)
 
+
     if prediction[0] == 0:
         return 'High Risk:It is crucial to seek urgent medical attention to ensure the health and safety of both you and your baby. Please consult your healthcare provider immediately.'
     elif prediction[0] == 1:
@@ -51,7 +57,7 @@ def risk_level_prediction(input_data):
     elif prediction[0] == 2:
         return 'Medium Risk:It is important to seek medical attention to monitor and manage any potential complications. Please schedule an appointment with your healthcare provider soon.'
     else:
-        return 'Error: Please enter valid data'
+        return 'Error: Please enter valid data' 
 
 @app.route('/')
 def home():
