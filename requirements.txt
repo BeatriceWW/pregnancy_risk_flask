@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 numpy==1.24.3
 streamlit==1.35.0
 scikit-learn==1.2.2
 
 flask-cors
 gunicorn
+=======
+numpy==1.24.3
+streamlit==1.35.0
+scikit-learn==1.2.2
+
+flask-cors
+gunicorn
+>>>>>>> 9b208022b11a1b2d0205c2b736dceb2ebb6a9901

@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 services:
   - type: web
     name: your-app-name
     env: python
     buildCommand: pip install -r requirements.txt
+=======
+services:
+  - type: web
+    name: your-app-name
+    env: python
+    buildCommand: pip install -r requirements.txt
+>>>>>>> 9b208022b11a1b2d0205c2b736dceb2ebb6a9901
     startCommand: gunicorn wsgi:app
