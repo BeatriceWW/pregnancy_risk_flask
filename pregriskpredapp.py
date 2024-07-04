@@ -45,13 +45,13 @@ def risk_level_prediction(input_data):
     prediction = model.predict(input_data_reshape)
 
     if prediction[0] == 0:
-        return 'High Risk'
+        return 'High Risk:It is crucial to seek urgent medical attention to ensure the health and safety of both you and your baby. Please consult your healthcare provider immediately.'
     elif prediction[0] == 1:
-        return 'Low Risk'
+        return 'Low Risk: Your pregnancy is currently considered low risk. Continue with your regular prenatal check-ups and maintain a healthy lifestyle.'
     elif prediction[0] == 2:
-        return 'Medium Risk'
+        return 'Medium Risk:It is important to seek medical attention to monitor and manage any potential complications. Please schedule an appointment with your healthcare provider soon.'
     else:
-        return 'Please enter correct data'
+        return 'Error: Please enter valid data'
 
 @app.route('/')
 def home():
